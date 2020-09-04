@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
+use App\models\Noticia;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +14,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::resource('valor_noticias', 'NoticiaController');
+Route::get('valor_noticias/edit/{id}', 'NoticiaController@edit');
+Route::get('valor_noticias/delete/{id}', 'NoticiaController@destroy');
+
+Route::get('formularios', 'formulario@forms');
