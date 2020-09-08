@@ -1,0 +1,22 @@
+ 
+
+
+
+
+.texto{
+    height: 100%;
+    transition: 1s;
+    color: whitesmoke !important;
+    text-decoration: none !important;
+  
+}
+
+.destaque:hover .texto{
+   
+    background-color: rgba(0, 0, 0, 0.411);
+    color: whitesmoke !important;
+
+}
+
+
+

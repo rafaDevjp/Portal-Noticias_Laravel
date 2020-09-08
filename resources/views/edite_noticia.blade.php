@@ -3,38 +3,49 @@
 
 @section('conteudo-dinamico')
 <h1>View Edite Noticia</h1>
-{{$dados}}
 
-
-
-
- {!! Form::open( array('url' => 'edit/' . $dados->id_noticia, 'method' =>'put')) !!}
-        {!! Form::text('nome', $dados->titulo,  array('class' => '')) !!}
-        {!! Form::text('autor', $dados->autor,  array('class' => 'form-control')) !!}
-        {!! Form::textarea('texto', $dados->decription, [$options]) !!}
-        {!! Form::submit('salvar Alteraçoes', array('class' => 'btn btn-success') [$options]) !!}
-{!! Form::close() !!}
-        {{-- <div class="container">
+    
+         
+        @foreach ($dados as $valor)
+            
+        <div class="container ">
             <div class="row justify-content-center">
-                <div class="col-6 border shadow p-3">
-                     <form action="" method="post">
+                <div class="col-6 border shadow p-3 bg-info card">
+                <form action="{{ url('valor_noticias/' . $valor->id_noticia) }}" method="POST">
+
+                        <div class="p-3 border card">
+                            <div class="col-12 text-center p-3">
+                            <h4>Editar conteúdo da notícia</h4>
+                        </div>
+                           @method('PUT')
+                            @csrf
                          <div class="form-group">
                              <label for="">Titulo</label>
-                            <input type="text" class="form-control" value="" name="titulo" required>
+                          <input type="text" class="form-control" value="{{$valor->titulo}}" name="titulo" required>
                          </div>
                          <div class="form-group">
-                             <label for=""></label>
-                             <input type="text" class="form-control" value="" name="autor" required>
+                             <label for="">Autor</label>
+                             <input type="text" class="form-control" value="{{$valor->autor}}" name="autor" required>
                          </div>
                          <div class="form-group">
-                             <label for=""></label>
-                             <textarea name="texto" value="" required></textarea>
+                             <label for="">Texto da Notícia</label>
+                             <textarea name="texto"  cols="30" rows="10" class="form-control" required>
+                             {{$valor->description}}
+                             </textarea>
                          </div>
+
+                         <div class="form-group text-center">
+                             <label for=""></label>
+                             <input type="submit" class="btn btn-success" value="Salvar Alterações" >
+                             <a href="{{route('inicio')}}" class="btn btn-danger">Voltar</a>
+                         </div>
+                        </div>
+                        
                      </form>
                 </div>
             </div>
-        </div> --}}
+        </div>
 
-        
+        @endforeach
     
 @endsection

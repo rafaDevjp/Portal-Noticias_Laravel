@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\models\Noticia;
 use Illuminate\Http\Request;
-
-
+use Illuminate\Support\Facades\DB;
+use phpDocumentor\Reflection\Types\This;
 
 class NoticiaController extends Controller
 {
@@ -87,7 +87,7 @@ class NoticiaController extends Controller
 
       
         $dados =  Noticia::find($id);
-        return view('edite_noticia', ['dados'=>$dados]);
+        return view('edite_noticia', compact('dados'));
     
         // return 'Metodo EDITAR';
     }
@@ -100,9 +100,18 @@ class NoticiaController extends Controller
      * @param  \App\models\Noticia  $noticia
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Noticia $noticia)
-    {
-        //
+    public function update(Request $request, Noticia $id){
+
+      
+
+      
+             
+         
+
+        return '<h1>Estes são os valores do UPDATE</h1><br>' . $id . '<br>' . $request->titulo . '<br>' . $request->autor .'<br>' . $request->texto ;
+
+       
+        
     }
 
     /**

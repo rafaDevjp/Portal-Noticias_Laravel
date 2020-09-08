@@ -17,8 +17,13 @@ use App\models\Noticia;
 ;
 
 
+//Rotas de navegação (NAVBAR)
+Route::get('/', 'NoticiaController@index')->name('inicio');
+Route::get('formularios', 'formulario@forms')->name('formularios'); 
+//
+
 Route::resource('valor_noticias', 'NoticiaController');
 Route::get('valor_noticias/edit/{id}', 'NoticiaController@edit');
 Route::get('valor_noticias/delete/{id}', 'NoticiaController@destroy');
 
-Route::get('formularios', 'formulario@forms');
+
