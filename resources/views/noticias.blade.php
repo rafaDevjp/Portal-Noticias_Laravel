@@ -1,5 +1,9 @@
 @extends('layout/app')
 
+@section('titulo')
+     Página | Início 
+@endsection
+
 <style>
     .bg_destaque_1{background:url("{{URL::asset('/imagens/img1.jpg')}}")no-repeat; background-size: cover;}
     .bg_destaque_2{background:url("{{URL::asset('/imagens/img2.jpg')}}")no-repeat; background-size: cover;}
@@ -9,12 +13,6 @@
 </style>
 
 
-@php  
-    // Modulo gerador aleatorio do nome da imagen 
-    $characters='1234';
-    $foto = $characters[Rand('1', strlen($characters))];
-    echo $img ='img'.$foto.'.jpg';   
-@endphp
 
 
 @section('conteudo-dinamico')
@@ -64,10 +62,10 @@
       
         <div class="col-lg-9 pl-0">
             @foreach ($dados as $dado)
-                <div class="card mb-3 shadow-sm " style="">
+                <div class="card mb-3 shadow-sm " >
                     <div class="row no-gutters">
                         <div class="col-md-6  p-0">
-                        <a href="valor_noticias/{{$dado->id_noticia}}"><img src=" {{URL::asset('imagens/'. $img)}}" class="card-img img-fluid" alt="{{$dado->titulo}}"></a>
+                        <a href="valor_noticias/{{$dado->id_noticia}}"><img src=" {{URL::asset('imagens/img4.jpg')}}" class="card-img img-fluid" alt="{{$dado->titulo}}"></a>
                         </div>
                         <div class="col-md-6  bg-light">
                             <div class="card-body">

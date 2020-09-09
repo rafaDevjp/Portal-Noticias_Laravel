@@ -1,5 +1,12 @@
 @extends('layout/app')
 
+@section('titulo')
+    News | Adicionar Notícia
+  @endsection
+
+
+
+
 @section('conteudo-dinamico')
    <h2 class="p-5">View Fomulario</h2> 
 
@@ -33,7 +40,7 @@
                        echo $feed ?? '';
                    @endphp
                </form>
-            <a href="./valor_noticias">Voltar</a>
+            <a href="{{route('painel')}}">Voltar</a>
 
            </div>
        </div>

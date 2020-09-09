@@ -31,10 +31,10 @@
                         <i class="fa fa-cog" aria-hidden="true"></i> Config
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="formularios"><i class="fa fa-plus" aria-hidden="true"></i> Adicionar Notícias</a>
+                        <a class="dropdown-item" href="{{route('formulario')}}"><i class="fa fa-plus" aria-hidden="true"></i> Adicionar Notícias</a>
                         <a class="dropdown-item" href="#">Another action</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="{{route('painel')}}">
                             <i class="fa fa-tachometer" aria-hidden="true"></i> Painel de Controle
                         </a>
                     </div>
