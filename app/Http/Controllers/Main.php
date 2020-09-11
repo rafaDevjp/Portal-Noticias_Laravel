@@ -9,10 +9,11 @@ class Main extends Controller{
 
     public function exibir_painel(){
 
-
         $dados =  Noticia::all();
+        $visivel = Noticia::all()->where('visivel', 1);
+        $invisivel = Noticia::all()->where('visivel', 0);
 
-      return view('painel' , compact('dados'));
+      return view('painel' , compact(['dados' , 'visivel', 'invisivel']));
     }
 
     public function adicionar_noticia()
@@ -20,6 +21,9 @@ class Main extends Controller{
         //Exibe tela de FORMULARIO
         return view('formulario');
     }
+
+    
+
 
 
 

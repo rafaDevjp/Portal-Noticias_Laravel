@@ -62,6 +62,10 @@
       
         <div class="col-lg-9 pl-0">
             @foreach ($dados as $dado)
+
+                @if ($dado->visivel == 1)
+                    
+               
                 <div class="card mb-3 shadow-sm " >
                     <div class="row no-gutters">
                         <div class="col-md-6  p-0">
@@ -72,13 +76,14 @@
                                 <h5 class="card-title">
                                     <a class="text-decoration-none " href="valor_noticias/{{$dado->id_noticia}}">{{$dado->titulo}}</a>
                                 </h5>
-                                <p class="card-text">{{ Str::limit($dado->description, 70) }}</p>
-                                <p class="card-text"><small class="text-muted">{{$dado->updated_at}} - Categoria: Exemple</small></p>
+                                <p class="card-text">{{ Str::limit($dado->description, 110) }}</p>
+                                <p class="card-text"><small class="text-muted">{{$dado->updated_at->diffForHumans()}} - Categoria: Exemple</small></p>
                                 
                             </div>
                         </div>
                     </div>
                 </div>
+                 @endif
             @endforeach
         </div>
         <div class="col-lg-3 bg-light">

@@ -1,4 +1,4 @@
- 
+ @import 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css';
 
  .bg-dashboard-gradiente{
        background: #0f0c29;  /* fallback for old browsers */
@@ -30,6 +30,10 @@
 
  }
 
+ .text-dark-blue{
+   color: #302b63 !important;  
+ }
+
  
 
 .texto{
@@ -45,10 +49,13 @@
     background-color: rgba(0, 0, 0, 0.411);
     color: whitesmoke !important;
 
+   
+
 }
 #listaNoticia{
-        overflow-x: auto;
-        max-height: 308px   
+        overflow-y: auto;
+        max-height: 375px;
+         color: #302b63 !important;  
 }
 
 #listaNoticia::-webkit-scrollbar {
@@ -63,13 +70,13 @@
  
 /* Handle */
 #listaNoticia::-webkit-scrollbar-thumb {
-   background: #e7b306; 
+   background:#d6d6db; 
   border-radius: 10px;
 }
 
 /* Handle on hover */
 #listaNoticia::-webkit-scrollbar-thumb:hover {
-  background: #2806e7; 
+  background: #302b63; 
 }
 
 
