@@ -19,12 +19,16 @@ use App\models\Noticia;
 
 //Rotas de navegação (NAVBAR)
 Route::get('/', 'NoticiaController@index')->name('inicio');
-Route::get('adicionar_noticia', 'Main@adicionar_noticia')->name('formulario');
+Route::get('nova_noticia', 'Main@create')->name('formulario');
 Route::get('dashboard', 'Main@exibir_painel')->name('painel');
 //
 
-Route::resource('valor_noticias', 'NoticiaController');
-Route::get('valor_noticias/edit/{id}', 'NoticiaController@edit');
-Route::get('valor_noticias/delete/{id}', 'NoticiaController@destroy');
+Route::resource('valor_noticias', 'NoticiaController')->except(['destroy','edit','create', 'update']);
+
+
+Route::get('edite/{id}', 'Main@edite')->name('edite');
+Route::get('delete/{id}', 'Main@delete')->name('delete');
+Route::post('update_noticias/{id}', 'Main@update_noticias')->name('update');
+
 
 

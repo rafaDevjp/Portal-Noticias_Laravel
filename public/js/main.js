@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function () {
             title: {
                 text: 'Quantidade Por Mês'
             },
-            
         },
        
         series: [
@@ -33,6 +32,10 @@ document.addEventListener('DOMContentLoaded', function () {
         {
         name: 'Esporte',
         data: [23,45,34,2,3,54,37,5,72,62,64,12],
+        },
+        {
+        name: 'Saúde',
+        data: [29,48,39,29,13,24,27,25,22,32,34,12],
         },
         {
         name: 'Policial',

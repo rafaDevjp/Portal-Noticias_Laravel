@@ -85,10 +85,10 @@
                                     <td>{{ Str::limit($dado->titulo, 50)}}...</td>
                                     <td> {{$dado->autor}} </td>
                                     <td class="text-center" title="Editar">
-                                        <a href="valor_noticias/edit/{{$dado->id_noticia}}"><i class="fa fa-pencil p-2 " aria-hidden="true"></i></a>
+                                        <a href="edite/{{$dado->id_noticia}}"><i class="fa fa-pencil p-2 " aria-hidden="true"></i></a>
                                     </td>
                                     <td class="text-center" title="Deletar">
-                                        <a href="" ><i class="fa fa-minus-circle text-danger p-2" aria-hidden="true"></i></a>
+                                        <a href="delete/{{$dado->id_noticia}}" ><i class="fa fa-minus-circle text-danger p-2" aria-hidden="true"></i></a>
                                     </td>
                                     </tr>
                                 @endforeach 
@@ -121,21 +121,25 @@
                         </table>
                     </div>
 
+                     <div class=" card shadow p-3 m-1 ">
+                    <h2 class="p-2 text-dark-blue text-center"><i class="fa fa-area-chart" aria-hidden="true"></i> Gráficos Por Categoria</h2>
+                    <hr>
+                    <div id="container" ></div>
+                </div>
+
                 </div>
               
 
            
             <div class=" col-lg-4 p-0 m-0">{{--COLUNA-2--}}
+
+
                 <div class="col-lg-12 card shadow p-3 m-1 ">
-                    <h2 class="p-2 text-dark-blue text-center"><i class="fa fa-area-chart" aria-hidden="true"></i> Grafico da Limha do Tempo</h2>
+                    <h2 class="p-2 text-dark-blue text-center"><i class="fa fa-area-chart" aria-hidden="true"></i> Gráfico da Limha do Tempo</h2>
                     <hr>
                     <canvas id="myChart"> </canvas>
                 </div>
-                <div class="col-lg-12 card shadow p-3 m-1 ">
-                    <h2 class="p-2 text-dark-blue text-center"><i class="fa fa-area-chart" aria-hidden="true"></i> Grafico Por Categoria</h2>
-                    <hr>
-                    <div id="container" ></div>
-                </div>
+               
 
                 
 

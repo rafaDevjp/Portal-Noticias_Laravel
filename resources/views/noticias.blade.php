@@ -77,7 +77,7 @@
                                     <a class="text-decoration-none " href="valor_noticias/{{$dado->id_noticia}}">{{$dado->titulo}}</a>
                                 </h5>
                                 <p class="card-text">{{ Str::limit($dado->description, 110) }}</p>
-                                <p class="card-text"><small class="text-muted">{{$dado->updated_at->diffForHumans()}} - Categoria: Exemple</small></p>
+                                <p class="card-text"><small class="text-muted">{{$dado->updated_at->diffForHumans()}} - Categoria: {{$dado->categoria}} </small></p>
                                 
                             </div>
                         </div>

@@ -6,47 +6,95 @@ News | Editar Notícia
 
 
 @section('conteudo-dinamico')
+    <section>
+        <div class="container-fluid bg-light">
+            <div class="row justify-content-center">
+                <div class="col-lg-11  p-4  ">
+                    <div class="text-center text-success">
+                        <h3 class="p-3">Escreva uma nova noticia</h3>
+                        <hr>
+                    </div>
+                <form action="../update_noticias/{{$valor->id_noticia}}" method="post" form_part >
+                        @csrf
+                        {{-- @method('PUT') --}}
+                        <div class="row  justify-content-center"> {{--linha --}}
 
-@foreach ($dados as $valor)
+                            <div class="col-lg-5">
+                                <!-- coluna-1 -->
+                                <div class="form-group">
+                                    <label for="">Titulo da Notícia</label>
+                                    <input type="text" class="form-control" name="titulo" value="{{$valor->titulo}}" >
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Autor(a)</label>
+                                    <input type="text" class="form-control" name="autor" value="{{$valor->autor}}" >
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputCategoria">Categorias</label>
+                                    <select id="inputCategoria" class="form-control" name="categoria" >
+                                        <option selected >{{$valor->categoria}}</option>
+                                        <option value="Política">Política</option>
+                                        <option value="Saúde">Saúde</option>
+                                        <option value="Ecônomia">Ecônomia</option>
+                                        <option value="Esportes">Esportes</option>
+                                        <option value="Mundo">Mundo</option>
+                                        <option value="Cultura">Cultura</option>
+                                    </select>
+                                </div>
+                                <div class="form-group form-check">
 
-<div class="container p-5">
-    <div class="row justify-content-center">
-        <div class="col-6 border shadow p-3 bg-info card">
-            <form action="{{ url('valor_noticias/' . $valor->id_noticia) }}" method="POST">
+                                    @if($valor->visivel === 1)
+                                      <input type="checkbox" class="form-check-input" id="exampleCheck1" name="visivel" value="{{$valor->visivel}}" checked >
+                                      <label class="form-check-label" for="exampleCheck1">Tornar visivel ?</label>
+                                    @else
+                                      <input type="checkbox" class="form-check-input" id="exampleCheck1" name="visivel" value="{{$valor->visivel}}" >
+                                      <label class="form-check-label" for="exampleCheck1">Tornar visivel ?</label>
+                                    @endif
+                                   
+                                </div>
+                                <div class="form-group form-check">
 
-                <div class="p-3 border card">
-                    <div class="col-12 text-center p-3">
-                        <h4>Editar conteúdo da notícia</h4>
-                    </div>
-                    @method('PUT')
-                    @csrf
-                    <div class="form-group">
-                        <label for="">Titulo</label>
-                        <input type="text" class="form-control" value="{{$valor->titulo}}" name="titulo" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="">Autor</label>
-                        <input type="text" class="form-control" value="{{$valor->autor}}" name="autor" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="">Texto da Notícia</label>
-                        <textarea name="texto" cols="30" rows="10" class="form-control" required>
-                        {{$valor->description}}
-                        </textarea>
-                    </div>
+                                    @if ($valor->destaque === 1)
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck1" name="destaque" value="{{$valor->destaque}}"checked >
+                                    @else
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck1" name="destaque" value="{{$valor->destaque}}" >
+                                    @endif
+                                    
+                                    <label class="form-check-label" for="exampleCheck1">Classificar como destaque ?</label>
+                                </div>
+                                {{-- <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="">
+                                    <label class="form-check-label" for="exampleCheck1">Classificar como destaque ?</label>
+                                </div> --}}
+                                <div class="form-group card pt-2 h-25">
+                                    <label for="exampleFormControlFile1">Adicionar Imagens</label>
+                                    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="arquivo" multiple>
+                                </div>
+                            </div>
 
-                    <div class="form-group text-center">
-                        <label for=""></label>
-                        <input type="submit" class="btn btn-success" value="Salvar Alterações">
-                        <a href="{{route('painel')}}" class="btn btn-danger">Voltar</a>
-                    </div>
+                            <div class="col-lg-5">
+                                <!-- coluna-2 -->
+                                <div class="form-group">
+                                    <label for="">Texto da Notícia</label>
+                                    <textarea name="texto" class="form-control" id="" cols="30" rows="17"
+                                    required>{{$valor->description}} </textarea>
+                                </div>
+                            
+                            </div>
+                            <div class="form-group col-lg-10 ">
+                                <input type="submit" class="btn btn-outline-success btn-block" value="Salvar Notícia">
+                            </div>
+                        </div>
+                    
+                        @php
+                        echo $feed ?? '';
+                        @endphp
+                    </form>
+                    <a href="{{route('painel')}}">Voltar</a>
+
                 </div>
-
-            </form>
+            </div>
         </div>
-    </div>
-</div>
-
-@endforeach
+    </section>
 
 @endsection

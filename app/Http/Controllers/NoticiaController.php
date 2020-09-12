@@ -11,10 +11,8 @@ use PhpParser\Node\Expr\Isset_;
 class NoticiaController extends Controller
 {
     /**
-     * apresenta uma view com todos os valores do database .
-     *
-     * @return \Illuminate\Http\Response
-     */
+     * apresenta uma view com todos os valores do database .*/
+   
     public function index(){
 
         $dados =  Noticia::all();
@@ -23,28 +21,22 @@ class NoticiaController extends Controller
     }
 
     /**
-     * Apresenta um Formulario para coletar dados e enviar para o método Store adicionar ao banco de dados.
-     *
-     * @return \Illuminate\Http\Response
-     */
+     * Apresenta um Formulario para coletar dados e enviar para o método Store adicionar ao banco de dados.*/
+     
     public function create(){
 
-        //    return view('formulario');
-        //
     }
 
     /**
-     * Store é a função que leo dado, ou seja, recebe o dado da view e adciona na base de dados
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+     * Store é a função que leo dado, ou seja, recebe o dado da view e adciona na base de dados*/
+    
     public function store(Request $dados){
         
         $noticia =  new noticia;
 
         $noticia->titulo = $dados->titulo;
         $noticia->autor = $dados->autor;
+        $noticia->categoria = $dados->categoria;
         $noticia->visivel = $dados->visivel;
         $noticia->destaque = $dados->destaque;
         $noticia->description = $dados->texto;
@@ -91,55 +83,23 @@ class NoticiaController extends Controller
     }
 
     /**
-     * Apresente um formulario para Editar um dado especifico.
-     * 
-     * @param  \App\models\Noticia  $noticia
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Noticia $id){
-
-      
-        $dados =  Noticia::find($id);
-        return view('edite_noticia', compact('dados'));
+     * Apresente um formulario para Editar um dado especifico.*/
     
-        // return 'Metodo EDITAR';
+    public function edit(Noticia $id){
+  
     }
 
     /**
-     * Função que atualiza o dado espesifico na base de dados
-     *****não apresenta tela
-
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\models\Noticia  $noticia
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Noticia $id){
-
-      
-
-      
-             
-         
-
-        return '<h1>Estes são os valores do UPDATE</h1><br>' . $id . '<br>' . $request->titulo . '<br>' . $request->autor .'<br>' . $request->texto ;
-
-       
+     * Função que atualiza o dado espesifico na base de dados*/
+  
+    public function update(Request $request, Noticia $id){  
         
     }
 
     /**
-     * Função que deleta um dados especifico na base de dados 
-     * ***não apresenta tela 
-     * 
-     * @param  \App\models\Noticia  $noticia
-     * @return \Illuminate\Http\Response
-     */
+     * Função que deleta um dados especifico na base de dados */
+  
     public function destroy(Noticia $id){
 
-
-        //return noticia::find($id);
-
-
-        return 'Metodo DELETAR';
     }
 }

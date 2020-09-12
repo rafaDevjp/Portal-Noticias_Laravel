@@ -17,6 +17,7 @@ class CreateNoticiasTable extends Migration
             $table->increments('id_noticia');
             $table->string('titulo', 500);
             $table->string('autor', 100);
+            $table->string('categoria', 100);
             $table->boolean('visivel');
             $table->boolean('destaque');
             $table->text('description');

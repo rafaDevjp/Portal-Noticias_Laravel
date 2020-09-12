@@ -9,9 +9,9 @@
 
 @section('conteudo-dinamico')
 <section>
-    <div class="container-fluid">
+    <div class="container-fluid bg-light">
         <div class="row justify-content-center">
-            <div class="col-lg-11 card p-4  ">
+            <div class="col-lg-11  p-4  ">
                 <div class="text-center text-success">
                     <h3 class="p-3">Escreva uma nova noticia</h3>
                     <hr>
@@ -30,6 +30,20 @@
                             <div class="form-group">
                                 <label for="">Autor(a)</label>
                                 <input type="text" class="form-control" name="autor" id="" required>
+                            </div>
+                             <div class="form-group">
+                                <label for="inputCategoria">Categorias</label>
+                                <select id="inputCategoria" class="form-control" name="categoria">
+                                    <option selected>Selecione...</option>
+                                    <option value="Política">Política</option>
+                                    <option value="Tempo">Clima-Tempo</option>
+                                    <option value="Meio Ambiente">Meio Ambiente</option>
+                                    <option value="Saúde">Saúde</option>
+                                    <option value="Ecônomia">Ecônomia</option>
+                                    <option value="Esportes">Esportes</option>
+                                    <option value="Mundo">Mundo</option>
+                                    <option value="Cultura">Cultura</option>
+                                </select>
                             </div>
                             <div class="form-group form-check">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1" name="visivel" checked>
@@ -53,7 +67,7 @@
                             <!-- coluna-2 -->
                             <div class="form-group">
                                 <label for="">Texto da Notícia</label>
-                                <textarea name="texto" class="form-control" id="" cols="30" rows="16"
+                                <textarea name="texto" class="form-control" id="" cols="30" rows="17"
                                     required></textarea>
                             </div>
                            
