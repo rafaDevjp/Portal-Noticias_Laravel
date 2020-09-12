@@ -31,7 +31,7 @@
                         <i class="fa fa-cog" aria-hidden="true"></i> Config
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{route('formulario')}}"><i class="fa fa-plus" aria-hidden="true"></i> Adicionar Notícias</a>
+                        <a class="dropdown-item" href="{{route('formulario')}}"> Login</a>
                         <a class="dropdown-item" href="#">Another action</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{{route('painel')}}">

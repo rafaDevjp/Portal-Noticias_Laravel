@@ -12,8 +12,9 @@ class Main extends Controller{
         $dados =  Noticia::all();
         $visivel = Noticia::all()->where('visivel', 1);
         $invisivel = Noticia::all()->where('visivel', 0);
+        $destaque = Noticia::all()->where('destaque', 1);
 
-      return view('painel' , compact(['dados' , 'visivel', 'invisivel']));
+      return view('painel' , compact(['dados' , 'visivel', 'invisivel', 'destaque']));
     }
 
     public function adicionar_noticia()

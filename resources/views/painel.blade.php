@@ -106,7 +106,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($dados as $key => $dado)
+                                @foreach ($destaque as $key => $dado)
                                     
                                         <tr>
                                             <th scope="row">{{$dado->id_noticia}}</th>
@@ -147,8 +147,8 @@
 
                
 
-                <div class="col-lg-12 card shadow p-3 m-1">
-                    <h2 class="p-2 text-primary text-center"><i class="fa fa-paperclip" aria-hidden="true"></i> Adicionar Material</h2>
+                <div class="col-lg-12 card shadow p-3 m-1 text-dark-blue">
+                    <h2 class="p-2  text-center"><i class="fa fa-paperclip" aria-hidden="true"></i> Adicionar Material</h2>
                     <hr>
                         <div class="card-body text-center">
                             <p class="card-text text-dark">Clique no botão para Adicionar uma nova material</p>

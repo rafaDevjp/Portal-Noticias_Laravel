@@ -6,6 +6,7 @@ use App\models\Noticia;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use phpDocumentor\Reflection\Types\This;
+use PhpParser\Node\Expr\Isset_;
 
 class NoticiaController extends Controller
 {
@@ -44,7 +45,19 @@ class NoticiaController extends Controller
 
         $noticia->titulo = $dados->titulo;
         $noticia->autor = $dados->autor;
+        $noticia->visivel = $dados->visivel;
+        $noticia->destaque = $dados->destaque;
         $noticia->description = $dados->texto;
+
+        if (isset($dados->visivel)) {
+            $noticia->visivel = 1;
+        }else {
+            $noticia->visivel = 0;
+        }if (isset($dados->destaque)) {
+            $noticia->destaque = 1;
+        }else {
+            $noticia->destaque = 0;
+        }
         $noticia->save();
 
         $feed = ['feed' => '<div class="alert alert-success alert-dismissible fade show" role="alert">

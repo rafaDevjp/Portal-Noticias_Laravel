@@ -9,5 +9,5 @@ class Noticia extends Model{
     //define a primaryKey como o valor a baixo
     protected $primaryKey = 'id_noticia';
 
-    protected $fillable = ['titulo', 'autor', 'description'];
+    protected $fillable = ['titulo', 'autor', 'description', 'visivel', 'destaque'];
 }
