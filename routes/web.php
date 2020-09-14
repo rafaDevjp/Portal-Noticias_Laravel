@@ -14,21 +14,22 @@ use App\models\Noticia;
 | contains the "web" middleware group. Now create something great!
 |
 */
-;
 
-
+//Rota dedicada a Área de gestão da Plataforma
+Route::view('admin2020', 'admin/login');
+//
 //Rotas de navegação (NAVBAR)
 Route::get('/', 'NoticiaController@index')->name('inicio');
-Route::get('nova_noticia', 'Main@create')->name('formulario');
 Route::get('dashboard', 'Main@exibir_painel')->name('painel');
 //
 
 Route::resource('valor_noticias', 'NoticiaController')->except(['destroy','edit','create', 'update']);
 
-
+Route::get('create', 'Main@create')->name('formulario');
 Route::get('edite/{id}', 'Main@edite')->name('edite');
-Route::get('delete/{id}', 'Main@delete')->name('delete');
 Route::post('update_noticias/{id}', 'Main@update_noticias')->name('update');
+Route::get('delete/{id}', 'Main@delete')->name('delete');
 
+Route::post('registro', 'UsuariosController@read');
 
 

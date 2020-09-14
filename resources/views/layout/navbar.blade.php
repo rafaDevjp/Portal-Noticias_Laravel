@@ -32,7 +32,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{route('formulario')}}"> Login</a>
-                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="{{route('formulario')}}"> Registre-se</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{{route('painel')}}">
                             <i class="fa fa-tachometer" aria-hidden="true"></i> Painel de Controle

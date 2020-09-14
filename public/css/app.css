@@ -1,4 +1,5 @@
  @import 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css';
+ @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
  .bg-dashboard-gradiente{
        background: #0f0c29;  /* fallback for old browsers */
@@ -32,9 +33,11 @@
 
  .text-dark-blue{
    color: #302b63 !important;  
+ }.btn-success{
+        background: #2ebf91 !important;  /* fallback for old browsers */
+       
  }
 
- 
 
 .texto{
     height: 100%;
@@ -79,4 +82,57 @@
   background: #302b63; 
 }
 
+@media (min-width: 768px) {
+   
+    .news h1{
+      
+      font-family: 'Fredoka One', cursive;
+      font-size: 110pt;
+      color: whitesmoke ;
+      /* text-shadow: 1pt 1pt 1pt rgb(56, 56, 56); */
+    }
+
+    .news p{
+      font-family: 'Fredoka One', cursive;
+      font-size: 30pt;
+      color: whitesmoke;
+      text-align: start;
+      
+    }
+
+    .navbar-brand {
+        padding-left: 8.7%;
+        font-family: 'Fredoka One', cursive;
+        font-size: 50pt;
+
+    }
+
+}
+
+/*dispositivo Movel*/
+@media (max-width: 575.98px) {
+     .news h1{
+        padding-top: 50px;
+        text-align: center;
+        font-family: 'Fredoka One', cursive;
+        font-size: 50pt;
+        color: whitesmoke ;
+    }
+
+    .news p{
+        text-align: center;
+        font-family: 'Fredoka One', cursive;
+        font-size: 15pt;
+        color: whitesmoke;
+        /* text-align: start; */
+      
+    }
+    .navbar-brand {
+        padding-left: 15px;
+        font-family: 'Fredoka One', cursive;
+        font-size: 30pt;
+
+    }
+    
+}
 

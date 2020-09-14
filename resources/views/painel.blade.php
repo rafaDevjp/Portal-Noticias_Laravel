@@ -9,7 +9,7 @@
 
 @section('conteudo-dinamico')
 
- <section class="bg-dashboard-gradiente" style="">
+ <section class="bg-dashboard-gradiente">
 
          
         <div class="container-fluid" >
@@ -18,7 +18,7 @@
                     <h1 class=" p-3"><i class="fa fa-tachometer text-warning" aria-hidden="true"></i> PAINEL DE CONTROLE</h1>
                 </div>
                 <div class="col-lg-6 text-right">
-                    <h5 class=" p-3"><i class="fa fa-id-card-o fa-1x text-warning" aria-hidden="true"></i> Nome do usuario Logado</h5>
+                    <h5 class=" p-3"><i class="fa fa-id-card-o fa-1x text-warning" aria-hidden="true"></i> Nome do Usuário Logado</h5>
                 </div>
             </div>
 
@@ -72,7 +72,7 @@
                             <thead>
                                 <tr>
                                   <th scope="col">ID</th>
-                                  <th scope="col">Tiulo</th>
+                                  <th scope="col">Título</th>
                                   <th scope="col">Autor</th>
                                   <th scope="col">Editar</th>
                                   <th scope="col">Deletar</th>
@@ -101,7 +101,7 @@
                             <thead>
                                 <tr>
                                   <th scope="col">ID</th>
-                                  <th scope="col">Tiulo</th>
+                                  <th scope="col">Título</th>
                                   <th scope="col">Autor</th>
                                 </tr>
                             </thead>
@@ -135,7 +135,7 @@
 
 
                 <div class="col-lg-12 card shadow p-3 m-1 ">
-                    <h2 class="p-2 text-dark-blue text-center"><i class="fa fa-area-chart" aria-hidden="true"></i> Gráfico da Limha do Tempo</h2>
+                    <h2 class="p-2 text-dark-blue text-center"><i class="fa fa-area-chart" aria-hidden="true"></i> Gráfico da Linha do Tempo</h2>
                     <hr>
                     <canvas id="myChart"> </canvas>
                 </div>
@@ -155,7 +155,7 @@
                     <h2 class="p-2  text-center"><i class="fa fa-paperclip" aria-hidden="true"></i> Adicionar Material</h2>
                     <hr>
                         <div class="card-body text-center">
-                            <p class="card-text text-dark">Clique no botão para Adicionar uma nova material</p>
+                            <p class="card-text text-dark">Clique no botão para Adicionar um novo material</p>
                         <a href="{{route('formulario')}}" class="btn btn-primary">Novo Material</a>
                         </div>
                 </div>

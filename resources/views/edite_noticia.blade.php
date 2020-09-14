@@ -10,8 +10,8 @@ News | Editar Notícia
         <div class="container-fluid bg-light">
             <div class="row justify-content-center">
                 <div class="col-lg-11  p-4  ">
-                    <div class="text-center text-success">
-                        <h3 class="p-3">Escreva uma nova noticia</h3>
+                    <div class="text-center text-dark-blue">
+                        <h3 class="p-3">Formulario de Edição</h3>
                         <hr>
                     </div>
                 <form action="../update_noticias/{{$valor->id_noticia}}" method="post" form_part >
@@ -23,15 +23,15 @@ News | Editar Notícia
                                 <!-- coluna-1 -->
                                 <div class="form-group">
                                     <label for="">Titulo da Notícia</label>
-                                    <input type="text" class="form-control" name="titulo" value="{{$valor->titulo}}" >
+                                    <input type="text" class="form-control text-success " name="titulo" value="{{$valor->titulo}}" >
                                 </div>
                                 <div class="form-group">
                                     <label for="">Autor(a)</label>
-                                    <input type="text" class="form-control" name="autor" value="{{$valor->autor}}" >
+                                    <input type="text" class="form-control text-success" name="autor" value="{{$valor->autor}}" >
                                 </div>
                                 <div class="form-group">
                                     <label for="inputCategoria">Categorias</label>
-                                    <select id="inputCategoria" class="form-control" name="categoria" >
+                                    <select id="inputCategoria" class="form-control text-success" name="categoria" >
                                         <option selected >{{$valor->categoria}}</option>
                                         <option value="Política">Política</option>
                                         <option value="Saúde">Saúde</option>
@@ -68,7 +68,7 @@ News | Editar Notícia
                                 </div> --}}
                                 <div class="form-group card pt-2 h-25">
                                     <label for="exampleFormControlFile1">Adicionar Imagens</label>
-                                    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="arquivo" multiple>
+                                    <input type="file" class="form-control text-success-file" id="exampleFormControlFile1" name="arquivo" multiple>
                                 </div>
                             </div>
 
@@ -76,7 +76,7 @@ News | Editar Notícia
                                 <!-- coluna-2 -->
                                 <div class="form-group">
                                     <label for="">Texto da Notícia</label>
-                                    <textarea name="texto" class="form-control" id="" cols="30" rows="17"
+                                    <textarea name="texto" class="form-control text-success" id="" cols="30" rows="17"
                                     required>{{$valor->description}} </textarea>
                                 </div>
                             

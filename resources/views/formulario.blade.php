@@ -16,7 +16,7 @@
                     <h3 class="p-3">Escreva uma nova noticia</h3>
                     <hr>
                 </div>
-                <form action="valor_noticias" method="post" form_part >
+                <form action="valor_noticias" method="post" >
                     @csrf
 
                     <div class="row  justify-content-center"> {{--linha --}}
