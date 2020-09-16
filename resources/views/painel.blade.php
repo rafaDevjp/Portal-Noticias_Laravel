@@ -1,13 +1,17 @@
 
 
-@extends('layout/app')
+@extends('layout/base')
 
     @section('titulo')
     News | Dashboard
     @endsection
 
 
-@section('conteudo-dinamico')
+{{-- @section('conteudo-dinamico') --}}
+ <nav class="navbar navbar-light  bg_card-2  shadow">
+        <a class=" navbar-brand text-white" href="{{route('inicio')}}"><h1>News<small>.com</small></h1></a>
+        
+    </nav>
 
  <section class="bg-dashboard-gradiente">
 
@@ -156,11 +160,14 @@
                     <hr>
                         <div class="card-body text-center">
                             <p class="card-text text-dark">Clique no botão para Adicionar um novo material</p>
-                        <a href="{{route('formulario')}}" class="btn btn-primary">Novo Material</a>
+                        <a href="{{route('formulario')}}" class="btn btn-success">Novo Material</a>
                         </div>
                 </div>
             </div>
         </div>
     </div>
  </section>
-@endsection    
+ <footer class="bg_card-2 p-4 text-center text-white">
+            <h5>&copy;@php echo date('Y')@endphp - NEWS.com</h5>
+ </footer>
+

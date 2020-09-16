@@ -68,7 +68,7 @@ News | Editar Notícia
                                 </div> --}}
                                 <div class="form-group card pt-2 h-25">
                                     <label for="exampleFormControlFile1">Adicionar Imagens</label>
-                                    <input type="file" class="form-control text-success-file" id="exampleFormControlFile1" name="arquivo" multiple>
+                                    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="arquivo" multiple>
                                 </div>
                             </div>
 

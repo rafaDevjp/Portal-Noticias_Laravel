@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('titulo', 'app.blade')</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{URL::asset('/css/app.css')}}">
-    <link href="{{URL::asset('/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{asset('/css/app.css')}}">
+    <link href="{{asset('/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
     <script src="https://code.highcharts.com/highcharts.js"></script>
 
 </head>

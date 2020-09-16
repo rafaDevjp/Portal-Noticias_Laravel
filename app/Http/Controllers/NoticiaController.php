@@ -4,9 +4,7 @@ namespace App\Http\Controllers;
 
 use App\models\Noticia;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use phpDocumentor\Reflection\Types\This;
-use PhpParser\Node\Expr\Isset_;
+
 
 class NoticiaController extends Controller
 {
@@ -15,7 +13,7 @@ class NoticiaController extends Controller
    
     public function index(){
 
-        $dados =  Noticia::all();
+        $dados =  Noticia::all()->sortByDesc('id_noticia');;
         
         return view('noticias' , compact('dados'));
     }

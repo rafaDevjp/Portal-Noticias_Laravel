@@ -15,8 +15,7 @@ use App\models\Noticia;
 |
 */
 
-//Rota dedicada a Área de gestão da Plataforma
-Route::view('admin2020', 'admin/login');
+
 //
 //Rotas de navegação (NAVBAR)
 Route::get('/', 'NoticiaController@index')->name('inicio');
@@ -30,6 +29,10 @@ Route::get('edite/{id}', 'Main@edite')->name('edite');
 Route::post('update_noticias/{id}', 'Main@update_noticias')->name('update');
 Route::get('delete/{id}', 'Main@delete')->name('delete');
 
+
+//Rota dedicada a Área de gestão da Plataforma
+Route::get('admin2020', 'UsuariosController@create')->name('admin2020');
+//rota para cadasrar usuarios
 Route::post('registro', 'UsuariosController@read');
-
-
+//rota de logar usuarios
+Route::post('login','UsuariosController@login');

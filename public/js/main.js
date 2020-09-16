@@ -75,7 +75,7 @@ var chart = new Chart(ctx, {
             label: 'Linha do tempo',
             backgroundColor: 'rgba(255, 255, 255, 0)',
             borderColor: '#302b63' ,
-            data: [23, 19, 20, 21, 20, 24, 25, 17, 19, 18, 22, 21],
+            data: ['', '', '', '', '', '', '', '', 19, 18, 22, 21],
           
         }]
       

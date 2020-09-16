@@ -11,7 +11,7 @@ class Main extends Controller{
     //Função EXIBE PAINEL.BLADE e  executa buscas ao BD para alimentar as tabelas no PAINEL.BLADE
     public function exibir_painel(){
 
-        $dados =  Noticia::all();                           // ->> busca TODOS os dados 
+        $dados =  Noticia::all()->sortByDesc('id_noticia');                           // ->> busca TODOS os dados 
         $visivel = Noticia::all()->where('visivel', 1);     // ->> busca dados na condição VISIVEL
         $invisivel = Noticia::all()->where('visivel', 0);   // ->> busca dados na condição INVISIVEL
         $destaque = Noticia::all()->where('destaque', 1);   // ->> busca dados na condição DESTAQUE

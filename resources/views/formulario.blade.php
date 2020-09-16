@@ -24,15 +24,15 @@
                         <div class="col-lg-5">
                             <!-- coluna-1 -->
                             <div class="form-group">
-                                <label for="">Titulo da Notícia</label>
-                                <input type="text" class="form-control" name="titulo" id="" required>
+                                <label for="">Titulo da Notícia:</label>
+                                <input type="text" class="form-control" name="titulo" id="" required autofocus>
                             </div>
                             <div class="form-group">
-                                <label for="">Autor(a)</label>
-                                <input type="text" class="form-control" name="autor" id="" required>
+                                <label for="">Autor(a):</label>
+                                <input type="text" class="form-control" name="autor" id="" required >
                             </div>
                              <div class="form-group">
-                                <label for="inputCategoria">Categorias</label>
+                                <label for="inputCategoria">Categorias:</label>
                                 <select id="inputCategoria" class="form-control" name="categoria">
                                     <option selected>Selecione...</option>
                                     <option value="Política">Política</option>
@@ -47,18 +47,18 @@
                             </div>
                             <div class="form-group form-check">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1" name="visivel" checked>
-                                <label class="form-check-label" for="exampleCheck1">Tornar visivel ?</label>
+                                <label class="form-check-label" for="exampleCheck1">Tornar visivel ?:</label>
                             </div>
                             <div class="form-group form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1" name="destaque" >
-                                <label class="form-check-label" for="exampleCheck1">Classificar como destaque ?</label>
+                                <input type="checkbox" class="form-check-input" id="exampleCheck2" name="destaque" >
+                                <label class="form-check-label" for="exampleCheck2">Classificar como destaque ?:</label>
                             </div>
                             {{-- <div class="form-group form-check">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1" name="">
-                                <label class="form-check-label" for="exampleCheck1">Classificar como destaque ?</label>
+                                <label class="form-check-label" for="exampleCheck1">Classificar como destaque ?:</label>
                             </div> --}}
                             <div class="form-group card pt-2 h-25">
-                                <label for="exampleFormControlFile1">Adicionar Imagens</label>
+                                <label for="exampleFormControlFile1">Adicionar Imagens:</label>
                                 <input type="file" class="form-control-file" id="exampleFormControlFile1" name="arquivo[]" multiple>
                             </div>
                         </div>
@@ -66,7 +66,7 @@
                         <div class="col-lg-5">
                             <!-- coluna-2 -->
                             <div class="form-group">
-                                <label for="">Texto da Notícia</label>
+                                <label for="">Texto da Notícia:</label>
                                 <textarea name="texto" class="form-control" id="" cols="30" rows="17"
                                     required></textarea>
                             </div>
