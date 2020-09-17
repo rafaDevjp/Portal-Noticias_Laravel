@@ -14,7 +14,7 @@ class Main extends Controller{
         $dados =  Noticia::all()->sortByDesc('id_noticia');                           // ->> busca TODOS os dados 
         $visivel = Noticia::all()->where('visivel', 1);     // ->> busca dados na condição VISIVEL
         $invisivel = Noticia::all()->where('visivel', 0);   // ->> busca dados na condição INVISIVEL
-        $destaque = Noticia::all()->where('destaque', 1);   // ->> busca dados na condição DESTAQUE
+        $destaque = Noticia::all()->where('destaque', 1)->sortByDesc('id_noticia');   // ->> busca dados na condição DESTAQUE
 
       return view('painel' , compact(['dados' , 'visivel', 'invisivel', 'destaque']));
     }

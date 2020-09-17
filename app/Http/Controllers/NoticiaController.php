@@ -13,9 +13,10 @@ class NoticiaController extends Controller
    
     public function index(){
 
-        $dados =  Noticia::all()->sortByDesc('id_noticia');;
+        $dados =  Noticia::all()->sortByDesc('id_noticia');
+        $noticia_destaque =  Noticia::all()->where('destaque', 1)->sortByDesc('id_noticia');
         
-        return view('noticias' , compact('dados'));
+        return view('noticias' , compact(['dados', 'noticia_destaque']));
     }
 
     /**

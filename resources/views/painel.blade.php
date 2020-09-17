@@ -110,16 +110,25 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                  @php
+                                      $cont = 0;///contador de dados passado pelo foreach
+                                  @endphp
                                 @foreach ($destaque as $key => $dado)
-                                    
+                                    @php
+                                        $cont; //VAOR ATUAL 
+                                    @endphp
                                         <tr>
                                             <th scope="row">{{$dado->id_noticia}}</th>
                                             <td class="p-2">{{ Str::limit($dado->titulo, 50)}}...</td>
                                             <td class="p-2"> {{$dado->autor}} </td>
                                         </tr>
                                         @php
-                                        if ($key >= 2)break;//limitador de consutas do FOREACH
+                                        if ( $cont>= 2)break;//limitador de consutas do FOREACH
+
+
+                                        $cont++;//DECREMENTO contador de dados passado pelo foreach
                                         @endphp 
+                                          
                                 @endforeach 
                             </tbody>
                         </table>

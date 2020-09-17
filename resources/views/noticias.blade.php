@@ -7,9 +7,7 @@
 <style>
     .bg_destaque_1{background:url("{{URL::asset('/imagens/img1.jpg')}}")no-repeat; background-size: cover;}
     .bg_destaque_2{background:url("{{URL::asset('/imagens/img2.jpg')}}")no-repeat; background-size: cover;}
-    .bg_destaque_3{background:url("{{URL::asset('/imagens/img3.jpg')}}")no-repeat; background-size: cover;}
-
-    
+    .bg_destaque_3{background:url("{{URL::asset('/imagens/img3.jpg')}}")no-repeat; background-size: cover;}  
 </style>
 
 
@@ -18,13 +16,33 @@
 @section('conteudo-dinamico')
 
 <div class="container p-1">
-    <div class="row justify-content-center">
-
+    <div class="row justify-content-center pt-4">
+               
+                @php
+                    $cont=0; //variavel adiciona um novo valor de ID para a noticia 
+                    foreach ($noticia_destaque as $noticia) {
+                                
+                            $cont;  ///ID recebe novo valor cont
+                        
+                            if ($cont ==0){
+                                $destaque1 = $noticia->titulo;
+                            }//
+                            if ($cont ==1){
+                                $destaque2 = $noticia->titulo;
+                            }//
+                            if ($cont ==2){
+                                $destaque3 = $noticia->titulo;
+                            }//
+                        
+                            $cont++; //cont recebe mail 1 
+                    }  
+                @endphp 
+       
         <div class="col-lg-6 bg_destaque_1 p-0 destaque " style="height: 600px;">
             {{-- <img src="" alt="img-test" srcset=""> --}}
             <div  class="texto d-flex align-items-end p-4">
                  <a href="#" class="text-decoration-none text-white">
-                        <h3>Cariocas e turistas voltam a ocupar areias das praias com cadeiras e barracas em feriadão de sol no Rio</h3>
+                 <h3>{{$destaque1 ?? ""}}</h3>
                     </a>
                 
             </div>
@@ -36,7 +54,7 @@
                 {{-- <img src="" alt="img-test" srcset=""> --}}
                 <div class="texto d-flex align-items-end p-4">
                     <a href="#" class="text-decoration-none text-white">
-                        <h3 >Manifestantes fazem carreata em favor da Lava Jato em São Paulo</h3>
+                        <h3 >{{$destaque2 ?? ""}}</h3>
                     </a>
                 </div>
             </div>
@@ -46,7 +64,7 @@
                <div class="texto d-flex align-items-end p-4">
                    
                      <a href="#" class="text-decoration-none text-white">
-                        <h3>Portugal tem maior número diário de casos de coronavírus desde maio</h3>
+                        <h3>{{$destaque3 ?? ""}}</h3>
                     </a>
                 </div>
                
