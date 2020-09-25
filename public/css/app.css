@@ -48,7 +48,6 @@
 }
 
 .destaque:hover .texto{
-   
     background-color: rgba(0, 0, 0, 0.411);
     color: whitesmoke !important;
 
@@ -60,6 +59,40 @@
         max-height: 375px;
          color: #302b63 !important;  
 }
+
+
+/*************:::Card Tempo:::****************/
+#card_tempo{
+        overflow-y: auto;
+        max-height: 140px;
+        color: #302b63 !important;  
+}
+
+#card_tempo::-webkit-scrollbar {
+  width: 5px;
+}
+/* Track */
+#card_tempo::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(235, 235, 235); 
+  border-radius: 10px;
+}
+ 
+#card_tempo::-webkit-scrollbar-thumb {
+  background: #d6d6d6; 
+  border-radius: 10px;
+}
+
+#container_img img{
+  width: 100px;  
+}
+
+.min{
+  color:#5d5d5e9c;
+}
+
+
+/**********************************************/
+
 
 #listaNoticia::-webkit-scrollbar {
   width: 10px;

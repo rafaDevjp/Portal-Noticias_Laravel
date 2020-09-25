@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\models\Noticia;
-use Illuminate\Http\Request;
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
+use function GuzzleHttp\json_decode;
 
 class NoticiaController extends Controller
 {
@@ -13,12 +15,23 @@ class NoticiaController extends Controller
    
     public function index(){
 
-        $dados =  Noticia::all()->sortByDesc('id_noticia');
-        $noticia_destaque =  Noticia::all()->where('destaque', 1)->sortByDesc('id_noticia');
-        
-        return view('noticias' , compact(['dados', 'noticia_destaque']));
-    }
+      $dados =  Noticia::all()->sortByDesc('id_noticia');
+       $noticia_destaque =  Noticia::all()->where('destaque', 1)->sortByDesc('id_noticia');
 
+  
+        $lot = Http::get('https://lotericas.io/api/v1/jogos/megasena/lasted')['data'][0];
+
+        // dd($lot);
+
+        $response = Http::get('https://api.hgbrasil.com/weather?key=875285ca&lat=-23.682&log=-46.875&user_ip=remote')['results'];
+
+        $resposta = Http::get('https://api.hgbrasil.com/weather?key=875285ca&lat=-23.682&log=-46.875&user_ip=remote')['results']['forecast'];
+        $previsao = collect($resposta);
+    
+ 
+        return view('noticias', compact(['dados', 'noticia_destaque', 'response', 'previsao','lot']));
+    }
+    
     /**
      * Apresenta um Formulario para coletar dados e enviar para o método Store adicionar ao banco de dados.*/
      

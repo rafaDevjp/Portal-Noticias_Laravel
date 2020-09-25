@@ -36,3 +36,5 @@ Route::get('admin2020', 'UsuariosController@create')->name('admin2020');
 Route::post('registro', 'UsuariosController@read');
 //rota de logar usuarios
 Route::post('login','UsuariosController@login');
+//
+Route::get('dados_covid','Main@api_weather')->name('api_weather');

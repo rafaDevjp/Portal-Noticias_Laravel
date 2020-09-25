@@ -139,8 +139,7 @@
                     <hr>
                     <div id="container" ></div>
                 </div>
-
-                </div>
+            </div>
               
 
            
@@ -153,17 +152,6 @@
                     <canvas id="myChart"> </canvas>
                 </div>
                
-
-                
-
-                
-
-
-                 
-
-
-               
-
                 <div class="col-lg-12 card shadow p-3 m-1 text-dark-blue">
                     <h2 class="p-2  text-center"><i class="fa fa-paperclip" aria-hidden="true"></i> Adicionar Material</h2>
                     <hr>
@@ -176,6 +164,7 @@
         </div>
     </div>
  </section>
+ 
  <footer class="bg_card-2 p-4 text-center text-white">
             <h5>&copy;@php echo date('Y')@endphp - NEWS.com</h5>
  </footer>

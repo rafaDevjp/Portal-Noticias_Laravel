@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use App\models\Noticia;
 use Illuminate\Http\Request;
-use PHPUnit\Framework\Error\Notice;
+use Illuminate\Support\Facades\Http;
+
 
 class Main extends Controller{
+
+    
 
     //Função EXIBE PAINEL.BLADE e  executa buscas ao BD para alimentar as tabelas no PAINEL.BLADE
     public function exibir_painel(){
@@ -76,5 +79,16 @@ class Main extends Controller{
 
     }
 //-------------------------------------------------------------------------
+
+    public function api_weather(){
+
+        $response = Http::get('https://api.hgbrasil.com/weather?key=875285ca&lat=-23.682&log=-46.875&user_ip=remote')['results'];
+
+        $resposta = Http::get('https://api.hgbrasil.com/weather?key=875285ca&lat=-23.682&log=-46.875&user_ip=remote')['results']['forecast'];
+        $previsao = collect($resposta);
+
+        return view('card_tempo', compact(['response','previsao']));
+        
+    }
     
 }//END_CLASS
